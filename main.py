@@ -1,4 +1,4 @@
-def isValid(s: str) -> bool:
+def is_valid_parenthesis_string(s: str) -> bool:
     pairs_dict = {"(": ")", "[": "]", "{": "}"}
     list_s = []
     element_count = 0
