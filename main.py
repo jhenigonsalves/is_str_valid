@@ -22,7 +22,3 @@ def is_valid_parenthesis_string(s: str) -> bool:
         return False
     else:
         return True
-
-
-# string_1 = "(]"
-# is_valid_parenthesis_string(string_1)
