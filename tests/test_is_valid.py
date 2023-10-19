@@ -18,8 +18,10 @@ def test_not_valid_str_in_is_valid_parenthesis_string():
     string_2 = "([{})"
     string_3 = "]()"
     string_4 = "]()"
+    string_5 = "({{]]{)]{["
 
     assert not is_valid_parenthesis_string(string_1)
     assert not is_valid_parenthesis_string(string_2)
     assert not is_valid_parenthesis_string(string_3)
     assert not is_valid_parenthesis_string(string_4)
+    assert not is_valid_parenthesis_string(string_5)
