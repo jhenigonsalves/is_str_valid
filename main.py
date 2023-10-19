@@ -1,22 +1,28 @@
 def is_valid_parenthesis_string(s: str) -> bool:
     pairs_dict = {"(": ")", "[": "]", "{": "}"}
     list_s = []
-    element_count = 0
-    for idx, element in enumerate(s):
+    for element in s:
+        print(f"element={element}")
         if element in pairs_dict.keys():
+            print(f"{element} is a key")
             list_s.append(element)
-            element_count = element_count + 1
         elif element in pairs_dict.values():
-            if not list_s:
+            print(f"{element} is not a key")
+            try:
+                is_closing = element == pairs_dict[list_s[-1]]
+                if is_closing:
+                    list_s.pop()
+                else:
+                    list_s.append(element)
+            except:
                 list_s.append(element)
-                element_count = element_count + 1
-            elif element == pairs_dict[list_s[element_count - 1]]:
-                element_count = element_count - 1
-                list_s.pop()
-            else:
-                list_s.append(element)
-                element_count = element_count + 1
+                print(f"{element} is not in the list")
+
     if list_s:
         return False
     else:
         return True
+
+
+# string_1 = "(]"
+# is_valid_parenthesis_string(string_1)
